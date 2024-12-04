@@ -13,7 +13,7 @@ Welcome to the **Microsoft Student Learn Club** website. This web app is designe
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
+
 
 ---
 
