@@ -17,22 +17,17 @@ import { Link } from "react-router-dom";
 
 const MicrosoftLogos = () => {
   const microsoftLogos = [
-    { name: "Azure", path: "/src/assets/azure.png" },
-    { name: "Teams", path: "/src/assets/teams.png" },
-    { name: "Office", path: "/src/assets/office.png" },
-    {
-      name: "Visual Studio",
-      path: "/src/assets/visualstudio.png",
-    },
-    { name: "Power BI", path: "/src/assets/powerbi.png" },
-    { name: "Azure", path: "/src/assets/azure.png" },
-    { name: "Teams", path: "/src/assets/teams.png" },
-    { name: "Office", path: "/src/assets/office.png" },
-    {
-      name: "Visual Studio",
-      path: "/src/assets/visualstudio.png",
-    },
-    { name: "Power BI", path: "/src/assets/powerbi.png" },
+    { name: "Azure", path: "/public/azure.svg" },
+    { name: "Teams", path: "/public/teams.svg" },
+    { name: "Office", path: "/public/office.svg" },
+    { name: "Visual Studio", path: "/public/visualstudio.svg" },
+    { name: "Power BI", path: "/public/powerbi.svg" },
+    
+    { name: "Azure", path: "/public/azure.svg" },
+    { name: "Teams", path: "/public/teams.svg" },
+    { name: "Office", path: "/public/office.svg" },
+    { name: "Visual Studio", path: "/public/visualstudio.svg" },
+    { name: "Power BI", path: "/public/powerbi.svg" },
   ];
   return (
     <div className="absolute inset-0 pointer-events-none">
