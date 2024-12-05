@@ -6,11 +6,16 @@ import Events from "./pages/Events";
 import About from "./pages/About";
 import JoinUs from "./pages/JoinUs";
 import Contact from "./pages/Contact";
+import ParticleBackground from "./components/ParticleBackground"; // Import the particle background
 
 const App = () => {
   return (
     <Router>
+      {/* ParticleBackground applied globally */}
+      <ParticleBackground />
+
       <Navbar />
+      
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -20,6 +25,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
+
       <Footer />
     </Router>
   );

@@ -1,16 +1,24 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { ArrowRight, Calendar, Info, Clock, MapPin, User } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import {
+  ArrowRight,
+  Github,
+  Linkedin,
+  Calendar,
+  Info,
+  Clock,
+  MapPin,
+  User,
+} from "lucide-react";
+import { Link } from "react-router-dom";
 
 import HeroSection from "../components/HeroSection";
 import About from "../pages/About";
-import TeamCard from "../components/TeamCard";
 import MdemoImg from "../assets/Mdemoimg.png";
 import FdemoImg from "../assets/Fdemoimg.png";
 
 const EventDetailModal = ({ event, onClose }) => (
-  <motion.div 
+  <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
@@ -22,7 +30,7 @@ const EventDetailModal = ({ event, onClose }) => (
       exit={{ scale: 0.9 }}
       className="bg-gray-800 rounded-2xl max-w-2xl w-full p-8 relative my-10"
     >
-      <button 
+      <button
         onClick={onClose}
         className="absolute top-4 right-4 text-gray-400 hover:text-white transition"
       >
@@ -55,18 +63,20 @@ const EventDetailModal = ({ event, onClose }) => (
           )}
         </div>
         <p className="leading-relaxed">{event.description}</p>
-        
+
         {event.additionalDetails && (
           <div className="bg-gray-700 rounded-lg p-4">
-            <h3 className="text-xl font-semibold mb-2 text-cyan-400">Additional Details</h3>
+            <h3 className="text-xl font-semibold mb-2 text-cyan-400">
+              Additional Details
+            </h3>
             <p className="text-gray-300">{event.additionalDetails}</p>
           </div>
         )}
-        
+
         <div className="flex space-x-4 mt-6">
-          <a 
-            href={event.link} 
-            target="_blank" 
+          <a
+            href={event.link}
+            target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 
             text-white rounded-lg hover:from-cyan-600 hover:to-blue-700 
@@ -101,26 +111,26 @@ const Home = () => {
     ],
     Technical: [
       {
-        name: "Prathamesh Halale",
-        role: "Technical ",
+        name: "Aadil Inamdar",
+        role: "Technical Team",
         image: MdemoImg,
         socials: { linkedin: "#", github: "#" },
       },
       {
-        name: "Aadil Inamdar",
-        role: "Technical ",
+        name: "Prathamesh Halale",
+        role: "Technical Team ",
         image: MdemoImg,
         socials: { linkedin: "#", github: "#" },
       },
       {
         name: "Nehakousar Kaji",
-        role: "Technical ",
+        role: "Technical Team ",
         image: FdemoImg,
         socials: { linkedin: "#", github: "#" },
       },
       {
         name: "Shalu Singh",
-        role: "Technical ",
+        role: "Technical Team",
         image: FdemoImg,
         socials: { linkedin: "#", github: "#" },
       },
@@ -175,9 +185,11 @@ const Home = () => {
       time: "10:00 AM - 4:00 PM",
       location: "Tech Innovation Center, Mumbai",
       organizer: "Cloud Experts Community",
-      description: "In-depth workshop on cloud computing with hands-on experience on Azure. Learn from industry professionals about the latest cloud technologies and best practices.",
-      additionalDetails: "Participants will receive hands-on lab access, course materials, and a certificate of completion. Lunch and refreshments will be provided.",
-      link: "https://example.com/event1"
+      description:
+        "In-depth workshop on cloud computing with hands-on experience on Azure. Learn from industry professionals about the latest cloud technologies and best practices.",
+      additionalDetails:
+        "Participants will receive hands-on lab access, course materials, and a certificate of completion. Lunch and refreshments will be provided.",
+      link: "https://example.com/event1",
     },
     {
       title: "AI & ML Hackathon",
@@ -185,10 +197,12 @@ const Home = () => {
       time: "9:00 AM - 10:00 PM",
       location: "Online Event",
       organizer: "AI Innovators League",
-      description: "Compete in a 24-hour hackathon focused on AI and ML innovation. Bring your ideas and transform them into cutting-edge solutions.",
-      additionalDetails: "Prizes for top 3 teams. Mentorship from industry experts throughout the event. Networking opportunities with tech leaders.",
-      link: "https://example.com/event2"
-    }
+      description:
+        "Compete in a 24-hour hackathon focused on AI and ML innovation. Bring your ideas and transform them into cutting-edge solutions.",
+      additionalDetails:
+        "Prizes for top 3 teams. Mentorship from industry experts throughout the event. Networking opportunities with tech leaders.",
+      link: "https://example.com/event2",
+    },
   ];
 
   const EventCard = ({ event, onDetailView }) => {
@@ -209,9 +223,11 @@ const Home = () => {
             className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600"
           />
         )}
-        
+
         <div className="relative z-10">
-          <h3 className="text-2xl font-bold mb-3 text-cyan-400">{event.title}</h3>
+          <h3 className="text-2xl font-bold mb-3 text-cyan-400">
+            {event.title}
+          </h3>
           <div className="flex items-center text-gray-400 space-x-3 mb-2">
             <Calendar size={20} />
             <span>{event.date}</span>
@@ -243,7 +259,7 @@ const Home = () => {
         className="p-10 bg-gray-900"
       >
         <div className="container mx-auto px-4">
-          <motion.h2 
+          <motion.h2
             initial={{ scale: 0.9, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             className="text-5xl font-bold text-center mb-12 
@@ -252,7 +268,7 @@ const Home = () => {
             Upcoming Events
           </motion.h2>
 
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -262,9 +278,9 @@ const Home = () => {
                 opacity: 1,
                 transition: {
                   delayChildren: 0.2,
-                  staggerChildren: 0.1
-                }
-              }
+                  staggerChildren: 0.1,
+                },
+              },
             }}
             className="grid md:grid-cols-2 gap-8"
           >
@@ -273,19 +289,16 @@ const Home = () => {
                 key={index}
                 variants={{
                   hidden: { y: 20, opacity: 0 },
-                  visible: { y: 0, opacity: 1 }
+                  visible: { y: 0, opacity: 1 },
                 }}
               >
-                <EventCard 
-                  event={event} 
-                  onDetailView={setSelectedEvent} 
-                />
+                <EventCard event={event} onDetailView={setSelectedEvent} />
               </motion.div>
             ))}
           </motion.div>
 
           <div className="flex justify-center mt-8">
-            <Link 
+            <Link
               to="/events"
               className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 
               text-white rounded-lg hover:from-cyan-600 hover:to-blue-700 
@@ -299,9 +312,9 @@ const Home = () => {
 
       <AnimatePresence>
         {selectedEvent && (
-          <EventDetailModal 
-            event={selectedEvent} 
-            onClose={() => setSelectedEvent(null)} 
+          <EventDetailModal
+            event={selectedEvent}
+            onClose={() => setSelectedEvent(null)}
           />
         )}
       </AnimatePresence>
@@ -311,52 +324,73 @@ const Home = () => {
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="p-10 bg-gray-800"
+        className="p-10 bg-gray-900"
       >
-        <div className="max-w-6xl mx-auto">
+        <div className="container mx-auto px-4">
           <motion.h2
             initial={{ scale: 0.9, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
-            className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500"
+            className="text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-indigo-500"
           >
-            Our Team
+            Team Members
           </motion.h2>
-          <div className="flex justify-center mb-8 space-x-4">
-            {Object.keys(teamMembers).map((tab) => (
+
+          {/* Tabs for Team Categories */}
+          <div className="flex space-x-6 justify-center mb-8">
+            {["Leadership", "Technical", "Events", "Other"].map((tab) => (
               <button
                 key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`px-4 py-2 rounded-lg transition-all duration-300 ${
+                className={`text-lg font-semibold py-2 px-6 rounded-lg transition-all duration-300 ${
                   activeTab === tab
-                    ? "bg-cyan-500 text-white"
-                    : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+                    ? "bg-teal-500 text-white"
+                    : "bg-gray-800 text-gray-300 hover:bg-gray-700"
                 }`}
+                onClick={() => setActiveTab(tab)}
               >
                 {tab}
               </button>
             ))}
           </div>
-          <motion.div
-            key={activeTab}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className={`grid gap-6 ${
-              teamMembers[activeTab].length <= 2
-                ? "grid-cols-2 place-content-center"
-                : "md:grid-cols-4 sm:grid-cols-2"
-            }`}
-          >
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers[activeTab].map((member, index) => (
-              <TeamCard
-                key={index}
-                name={member.name}
-                role={member.role}
-                image={member.image}
-                socials={member.socials}
-              />
+              <motion.div key={index}>
+                <div className="bg-gray-800 p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-32 h-32 rounded-full mx-auto mb-4"
+                  />
+                  <h3 className="text-xl font-semibold text-teal-400 text-center">
+                    {member.name}
+                  </h3>
+                  <p className="text-gray-400 text-center">{member.role}</p>
+                  <div className="mt-4 flex justify-center space-x-6">
+                    <a
+                      href={member.socials.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-teal-400 hover:text-teal-500 transition-all duration-300"
+                    >
+                      <motion.div whileHover={{ scale: 1.2 }}>
+                        <Linkedin size={24} />
+                      </motion.div>
+                    </a>
+                    <a
+                      href={member.socials.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-teal-400 hover:text-teal-500 transition-all duration-300"
+                    >
+                      <motion.div whileHover={{ scale: 1.2 }}>
+                        <Github size={24} />
+                      </motion.div>
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </motion.div>
     </div>
