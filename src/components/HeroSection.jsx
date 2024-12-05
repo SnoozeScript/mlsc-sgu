@@ -17,17 +17,17 @@ import { Link } from "react-router-dom";
 
 const MicrosoftLogos = () => {
   const microsoftLogos = [
-    { name: "Azure", path: "/public/azure.svg" },
-    { name: "Teams", path: "/public/teams.svg" },
-    { name: "Office", path: "/public/office.svg" },
-    { name: "Visual Studio", path: "/public/visualstudio.svg" },
-    { name: "Power BI", path: "/public/powerbi.svg" },
+    { name: "Azure", path: "/azure.svg" },
+    { name: "Teams", path: "/teams.svg" },
+    { name: "Office", path: "/office.svg" },
+    { name: "Visual Studio", path: "/visualstudio.svg" },
+    { name: "Power BI", path: "/powerbi.svg" },
     
-    { name: "Azure", path: "/public/azure.svg" },
-    { name: "Teams", path: "/public/teams.svg" },
-    { name: "Office", path: "/public/office.svg" },
-    { name: "Visual Studio", path: "/public/visualstudio.svg" },
-    { name: "Power BI", path: "/public/powerbi.svg" },
+    { name: "Azure", path: "/azure.svg" },
+    { name: "Teams", path: "/teams.svg" },
+    { name: "Office", path: "/office.svg" },
+    { name: "Visual Studio", path: "/visualstudio.svg" },
+    { name: "Power BI", path: "/powerbi.svg" },
   ];
   return (
     <div className="absolute inset-0 pointer-events-none">
