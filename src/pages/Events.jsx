@@ -62,7 +62,7 @@ const EventDetailModal = ({ event, onClose }) => (
           <div className="flex space-x-4 mt-6">
             <a
               href={event.link}
-              target="_blank"
+              
               rel="noopener noreferrer"
               className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 
               text-white rounded-lg hover:from-cyan-600 hover:to-blue-700 
@@ -184,7 +184,7 @@ const Events = () => {
         "Comprehensive summit exploring the latest trends in data science, machine learning, and AI technologies.",
       additionalDetails:
         "Keynote speeches, panel discussions, and networking opportunities with leading data scientists.",
-      link: "https://example.com/event-recap",
+      link: "/dataSciencesummitrecap",
       status: 'completed'
     },
     {

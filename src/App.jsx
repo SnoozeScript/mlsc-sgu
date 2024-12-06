@@ -8,7 +8,7 @@ import JoinUs from "./pages/JoinUs";
 import Contact from "./pages/Contact";
 import ParticleBackground from "./components/ParticleBackground";
 import MicrosoftLogos from "./components/MicrosoftLogos";
-
+import DataScienceSummitRecap from "./components/Recap/DataScienceSummitRecap";
 const App = () => {
   return (
     <Router>
@@ -28,6 +28,7 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/join-us" element={<JoinUs />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/dataSciencesummitrecap" element={<DataScienceSummitRecap />} />
           </Routes>
         </main>
         

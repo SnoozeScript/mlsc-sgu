@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 
 import HeroSection from "../components/HeroSection";
 import About from "../pages/About";
+import Contact from "../pages/Contact";
 import MdemoImg from "../assets/Mdemoimg.png";
 import FdemoImg from "../assets/Fdemoimg.png";
 
@@ -262,8 +263,8 @@ const Home = () => {
           <motion.h2
             initial={{ scale: 0.9, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
-            className="text-5xl font-bold text-center mb-12 
-            bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500"
+            className="text-5xl font-bold text-center mb-16
+    bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500 px-4 sm:px-0 pb-8"
           >
             Upcoming Events
           </motion.h2>
@@ -282,7 +283,7 @@ const Home = () => {
                 },
               },
             }}
-            className="grid md:grid-cols-2 gap-8"
+            className="grid md:grid-cols-2 gap-8 mt-8"
           >
             {previewEvents.map((event, index) => (
               <motion.div
@@ -301,8 +302,8 @@ const Home = () => {
             <Link
               to="/events"
               className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 
-              text-white rounded-lg hover:from-cyan-600 hover:to-blue-700 
-              transition flex items-center"
+    text-white rounded-lg hover:from-cyan-600 hover:to-blue-700 
+    transition flex items-center"
             >
               See More Events <ArrowRight className="ml-2" />
             </Link>
@@ -335,7 +336,6 @@ const Home = () => {
             Team Members
           </motion.h2>
 
-         
           {/* Tabs for Team Categories */}
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             {["Leadership", "Technical", "Events", "Other"].map((tab) => (
@@ -394,6 +394,7 @@ const Home = () => {
           </div>
         </div>
       </motion.div>
+      <Contact />
     </div>
   );
 };
