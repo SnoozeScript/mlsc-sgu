@@ -4,8 +4,8 @@ import { Menu, X, Home, Calendar, Info, MessageCircle } from "lucide-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeItem, setActiveItem] = useState(""); // Highlight active nav item
-  const [isScrolled, setIsScrolled] = useState(false); // Track scroll state
+  const [activeItem, setActiveItem] = useState(""); 
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const navItems = [
     {

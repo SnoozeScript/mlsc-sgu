@@ -1,13 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { 
-  Send, 
-  User, 
-  Mail, 
-  MessageCircle, 
-  MapPin, 
-  Phone 
-} from "lucide-react";
+import { Send, User, Mail, MessageCircle, MapPin, Phone } from "lucide-react";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -18,7 +11,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulated form submission
     setTimeout(() => {
       alert("Thanks for reaching out!");
@@ -37,8 +30,10 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl font-bold text-center mb-12 
-            bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
+          <h2
+            className="text-5xl font-bold text-center mb-12 
+            bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500"
+          >
             Contact Us
           </h2>
         </motion.div>
@@ -70,24 +65,6 @@ const Contact = () => {
                 <span>contact@mlsc.sgu.edu</span>
               </div>
             </div>
-
-            <div className="mt-8">
-              <h4 className="text-xl font-semibold mb-4 text-cyan-400">
-                Our Socials
-              </h4>
-              <div className="flex space-x-4">
-                {['LinkedIn', 'GitHub', 'Instagram'].map((social) => (
-                  <motion.a
-                    key={social}
-                    href="#"
-                    whileHover={{ scale: 1.2 }}
-                    className="text-gray-300 hover:text-cyan-400"
-                  >
-                    {social}
-                  </motion.a>
-                ))}
-              </div>
-            </div>
           </motion.div>
 
           {/* Contact Form */}
@@ -96,14 +73,14 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <form 
-              onSubmit={handleSubmit} 
+            <form
+              onSubmit={handleSubmit}
               className="bg-gray-800/50 backdrop-blur-lg p-8 rounded-2xl 
               border border-white/10 space-y-6"
             >
               <div className="relative">
-                <label 
-                  htmlFor="name" 
+                <label
+                  htmlFor="name"
                   className="block mb-2 text-cyan-400 flex items-center"
                 >
                   <User className="mr-2" size={20} /> Name
@@ -121,8 +98,8 @@ const Contact = () => {
               </div>
 
               <div className="relative">
-                <label 
-                  htmlFor="email" 
+                <label
+                  htmlFor="email"
                   className="block mb-2 text-cyan-400 flex items-center"
                 >
                   <Mail className="mr-2" size={20} /> Email
@@ -140,8 +117,8 @@ const Contact = () => {
               </div>
 
               <div className="relative">
-                <label 
-                  htmlFor="message" 
+                <label
+                  htmlFor="message"
                   className="block mb-2 text-cyan-400 flex items-center"
                 >
                   <MessageCircle className="mr-2" size={20} /> Message
@@ -165,9 +142,11 @@ const Contact = () => {
                 whileTap={{ scale: 0.95 }}
                 className={`w-full p-3 rounded-lg transition duration-300 
                 flex items-center justify-center space-x-2 
-                ${isSubmitting 
-                  ? 'bg-gray-600 cursor-not-allowed' 
-                  : 'bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700'}`}
+                ${
+                  isSubmitting
+                    ? "bg-gray-600 cursor-not-allowed"
+                    : "bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700"
+                }`}
               >
                 {isSubmitting ? (
                   <>Sending...</>

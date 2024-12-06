@@ -11,7 +11,7 @@ import {
   User,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-
+import PropTypes from "prop-types";
 import HeroSection from "../components/HeroSection";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
@@ -75,26 +75,50 @@ const EventDetailModal = ({ event, onClose }) => (
         )}
 
         <div className="flex space-x-4 mt-6">
-          <a
-            href={event.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 
-            text-white rounded-lg hover:from-cyan-600 hover:to-blue-700 
-            transition flex items-center"
-          >
-            Register Now <ArrowRight className="ml-2" />
-          </a>
+          {event.link === "#" ? (
+            <span className="flex items-center space-x-2 bg-gray-700 text-gray-400 text-sm p-3 rounded-lg border border-gray-500">
+              <Info className="text-cyan-400" size={16} />
+              <span>Link Not Available</span>
+            </span>
+          ) : (
+            <a
+              href={event.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 
+              text-white rounded-lg hover:from-cyan-600 hover:to-blue-700 
+              transition flex items-center"
+            >
+              {event.status === "completed" ? "View Recap" : "Register Now"}
+              <ArrowRight className="ml-2" />
+            </a>
+          )}
         </div>
       </div>
     </motion.div>
   </motion.div>
 );
 
+EventDetailModal.propTypes = {
+  event: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    time: PropTypes.string,
+    location: PropTypes.string,
+    organizer: PropTypes.string,
+    description: PropTypes.string.isRequired,
+    additionalDetails: PropTypes.string,
+    link: PropTypes.string.isRequired,
+    status: PropTypes.oneOf(["upcoming", "completed"]),
+  }).isRequired,
+  onClose: PropTypes.func.isRequired,
+};
 const Home = () => {
   const [activeTab, setActiveTab] = useState("Leadership");
   const [selectedEvent, setSelectedEvent] = useState(null);
 
+
+  // Team details
   const teamMembers = {
     Leadership: [
       {
@@ -115,7 +139,7 @@ const Home = () => {
         name: "Aadil Inamdar",
         role: "Technical Team",
         image: MdemoImg,
-        socials: { linkedin: "#", github: "#" },
+        socials: { linkedin: "https://www.linkedin.com/in/aadilinamdar27", github: "https://github.com/SnoozeScript" },
       },
       {
         name: "Prathamesh Halale",
@@ -202,7 +226,7 @@ const Home = () => {
         "Compete in a 24-hour hackathon focused on AI and ML innovation. Bring your ideas and transform them into cutting-edge solutions.",
       additionalDetails:
         "Prizes for top 3 teams. Mentorship from industry experts throughout the event. Networking opportunities with tech leaders.",
-      link: "https://forms.office.com/r/1YpJ8v14152",
+      link: "#",
     },
   ];
 
@@ -245,6 +269,15 @@ const Home = () => {
         </div>
       </motion.div>
     );
+  };
+  // Add prop types validation EventCard
+  EventCard.propTypes = {
+    event: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      date: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+    }).isRequired,
+    onDetailView: PropTypes.func.isRequired,
   };
 
   return (

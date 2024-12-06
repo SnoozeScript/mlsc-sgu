@@ -33,7 +33,7 @@ const Footer = () => {
               <span className="hidden md:inline-block">Twitter</span>
             </a>
             <a
-              href="https://instagram.com" // Replace with actual links
+              href="https://www.instagram.com/sgu_mlsc" // Replace with actual links
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center space-x-2 text-white hover:text-cyan-400 transition duration-300"
@@ -42,7 +42,7 @@ const Footer = () => {
               <span className="hidden md:inline-block">Instagram</span>
             </a>
             <a
-              href="https://linkedin.com" // Replace with actual links
+              href="https://www.linkedin.com/company/sgumlsc" // Replace with actual links
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center space-x-2 text-white hover:text-cyan-400 transition duration-300"

@@ -3,14 +3,21 @@ import MicrosoftLogos from "./MicrosoftLogos";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { Rocket, ArrowRight, Star, BookOpen, CloudLightning, Target } from "lucide-react";
+import {
+  Rocket,
+  Calendar,
+  BookOpen,
+  CloudLightning,
+  Target,
+} from "lucide-react";
 
 const HeroSection = () => {
   const ref = useRef(null);
   const controls = useAnimation();
 
   useEffect(() => {
-    const inView = ref.current?.getBoundingClientRect().top < window.innerHeight;
+    const inView =
+      ref.current?.getBoundingClientRect().top < window.innerHeight;
     if (inView) controls.start("visible");
   }, [controls]);
 
@@ -99,27 +106,18 @@ const HeroSection = () => {
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-            >
-              <Link
-                to="/join-us"
-                className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 
-                text-white rounded-lg shadow-lg hover:shadow-xl transition transform flex items-center"
-              >
-                Join Now <ArrowRight className="ml-2" />
-              </Link>
-            </motion.div>
-            <motion.div
-              variants={itemVariants}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="flex justify-center items-center"
             >
               <Link
                 to="/events"
-                className="px-6 py-3 border-2 border-cyan-400 text-cyan-400 
-                rounded-lg hover:bg-cyan-500/10 transition transform 
-                flex items-center"
+                className="px-4 py-3 border-2 border-cyan-400 text-cyan-400 
+    rounded-lg bg-transparent hover:bg-cyan-500/10 focus:outline-none transition-all duration-300 
+    transform flex items-center justify-center space-x-2 hover:scale-105"
               >
-                Explore Events <Star className="ml-2" />
+                <span className="text-sm font-semibold">Explore Events</span>{" "}
+                {/* Reduced font size */}
+                <Calendar className="ml-2 text-cyan-400 text-sm" />{" "}
+                {/* Reduced icon size */}
               </Link>
             </motion.div>
           </div>
@@ -141,9 +139,7 @@ const HeroSection = () => {
                 <h3 className="text-lg font-bold text-white">
                   {highlight.title}
                 </h3>
-                <p className="text-gray-300 text-sm">
-                  {highlight.description}
-                </p>
+                <p className="text-gray-300 text-sm">{highlight.description}</p>
               </div>
             </motion.div>
           ))}
