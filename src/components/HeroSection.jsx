@@ -1,148 +1,18 @@
+import ParticleBackground from "./ParticleBackground";
+import MicrosoftLogos from "./MicrosoftLogos";
+import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef } from "react";
-import {
-  motion,
-  useInView,
-  useAnimation,
-  AnimatePresence,
-} from "framer-motion";
-import {
-  ArrowRight,
-  Star,
-  Rocket,
-  BookOpen,
-  CloudLightning,
-  Target,
-} from "lucide-react";
 import { Link } from "react-router-dom";
-
-const MicrosoftLogos = () => {
-  const microsoftLogos = [
-    { name: "Azure", path: "/azure.svg" },
-    { name: "Teams", path: "/teams.svg" },
-    { name: "Office", path: "/office.svg" },
-    { name: "Visual Studio", path: "/visualstudio.svg" },
-    { name: "Power BI", path: "/powerbi.svg" },
-    
-    { name: "Azure", path: "/azure.svg" },
-    { name: "Teams", path: "/teams.svg" },
-    { name: "Office", path: "/office.svg" },
-    { name: "Visual Studio", path: "/visualstudio.svg" },
-    { name: "Power BI", path: "/powerbi.svg" },
-  ];
-  return (
-    <div className="absolute inset-0 pointer-events-none">
-      {microsoftLogos.map((logo) => (
-        <motion.div
-          key={logo.name}
-          className="absolute w-16 h-16 opacity-100"
-          initial={{
-            x: Math.random() * window.innerWidth,
-            y: Math.random() * window.innerHeight,
-            opacity: 0,
-          }}
-          animate={{
-            x: [
-              Math.random() * window.innerWidth,
-              Math.random() * window.innerWidth,
-              Math.random() * window.innerWidth,
-            ],
-            y: [
-              Math.random() * window.innerHeight,
-              Math.random() * window.innerHeight,
-              Math.random() * window.innerHeight,
-            ],
-            rotate: [0, 360, 0],
-            opacity: [0, 0.3, 0],
-          }}
-          transition={{
-            duration: Math.random() * 10 + 15,
-            repeat: Infinity,
-            repeatType: "loop",
-            ease: "easeInOut",
-          }}
-        >
-          <img
-            src={logo.path}
-            alt={`${logo.name} Logo`}
-            className="w-full h-full object-contain"
-          />
-        </motion.div>
-      ))}
-    </div>
-  );
-};
-
-const ParticleBackground = () => {
-  const particles = Array.from({ length: 50 }, (_, i) => ({
-    id: i,
-    size: Math.random() * 10 + 2,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    delay: Math.random() * 2,
-    duration: Math.random() * 5 + 3,
-  }));
-
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {particles.map((particle) => (
-        <motion.div
-          key={particle.id}
-          className="absolute rounded-full bg-white/20"
-          style={{
-            width: particle.size,
-            height: particle.size,
-            left: `${particle.x}%`,
-            top: `${particle.y}%`,
-          }}
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{
-            opacity: [0, 1, 0],
-            scale: [0, 1, 0],
-            x: [
-              `${Math.random() * 200 - 100}px`,
-              `${Math.random() * 200 - 100}px`,
-            ],
-            y: [
-              `${Math.random() * 200 - 100}px`,
-              `${Math.random() * 200 - 100}px`,
-            ],
-          }}
-          transition={{
-            delay: particle.delay,
-            duration: particle.duration,
-            repeat: Infinity,
-            repeatType: "loop",
-            ease: "easeInOut",
-          }}
-        />
-      ))}
-      <motion.div
-        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 blur-3xl opacity-20"
-        animate={{
-          scale: [1, 1.3, 1],
-          opacity: [0.3, 0.5, 0.3],
-          rotate: [0, 360, 0],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-    </div>
-  );
-};
+import { Rocket, ArrowRight, Star, BookOpen, CloudLightning, Target } from "lucide-react";
 
 const HeroSection = () => {
   const ref = useRef(null);
   const controls = useAnimation();
-  const inView = useInView(ref);
 
   useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
+    const inView = ref.current?.getBoundingClientRect().top < window.innerHeight;
+    if (inView) controls.start("visible");
+  }, [controls]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -193,8 +63,7 @@ const HeroSection = () => {
     <div
       ref={ref}
       className="relative min-h-screen flex items-center justify-center 
-      bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-800 
-      overflow-hidden"
+      bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-800"
     >
       <ParticleBackground />
       <MicrosoftLogos />
@@ -205,6 +74,7 @@ const HeroSection = () => {
         animate={controls}
         className="relative z-10 max-w-6xl px-6 py-12 grid md:grid-cols-2 gap-12"
       >
+        {/* Left Section: Heading, Description, and Buttons */}
         <motion.div variants={itemVariants} className="space-y-6">
           <motion.div
             variants={itemVariants}
@@ -219,9 +89,6 @@ const HeroSection = () => {
           <motion.p
             variants={itemVariants}
             className="text-gray-300 text-lg leading-relaxed"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
           >
             Unleash your potential at the intersection of innovation and
             technology. Join a transformative journey that bridges academic
@@ -258,32 +125,28 @@ const HeroSection = () => {
           </div>
         </motion.div>
 
+        {/* Right Section: Highlights */}
         <motion.div variants={itemVariants} className="grid gap-6">
-          <AnimatePresence>
-            {highlights.map((highlight, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -50 }}
-                whileHover={{ scale: 1.05 }}
-                className="bg-white/10 p-6 rounded-xl border border-white/20 
-                backdrop-blur-lg shadow-md hover:shadow-xl flex items-center space-x-4 
-                transition duration-300"
-              >
-                <div>{highlight.icon}</div>
-                <div>
-                  <h3 className="text-lg font-bold text-white">
-                    {highlight.title}
-                  </h3>
-                  <p className="text-gray-300 text-sm">
-                    {highlight.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
+          {highlights.map((highlight, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              whileHover={{ scale: 1.05 }}
+              className="bg-white/10 p-6 rounded-xl border border-white/20 
+              backdrop-blur-lg shadow-md hover:shadow-xl flex items-center space-x-4 
+              transition duration-300"
+            >
+              <div>{highlight.icon}</div>
+              <div>
+                <h3 className="text-lg font-bold text-white">
+                  {highlight.title}
+                </h3>
+                <p className="text-gray-300 text-sm">
+                  {highlight.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
       </motion.div>
     </div>

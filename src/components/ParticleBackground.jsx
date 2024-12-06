@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 
 const ParticleBackground = () => {
@@ -46,34 +45,6 @@ const ParticleBackground = () => {
           }}
         />
       ))}
-
-      {/* Gradient Blobs */}
-      <motion.div
-        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 blur-3xl opacity-1"
-        animate={{
-          scale: [1, 1.3, 1],
-          opacity: [0.3, 0.5, 0.3],
-          rotate: [0, 360, 0],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-      <motion.div
-        className="absolute bottom-1/3 right-1/3 w-72 h-72 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-red-600 blur-2xl opacity-1"
-        animate={{
-          scale: [1, 1.2, 1],
-          rotate: [0, 360],
-          opacity: [0.2, 0.5, 0.2],
-        }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-      />
     </div>
   );
 };
