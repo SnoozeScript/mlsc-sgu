@@ -335,8 +335,9 @@ const Home = () => {
             Team Members
           </motion.h2>
 
+         
           {/* Tabs for Team Categories */}
-          <div className="flex flex-wrap justify-center gap-4 sm:flex-col sm:w-full mb-8">
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
             {["Leadership", "Technical", "Events", "Other"].map((tab) => (
               <button
                 key={tab}
@@ -344,7 +345,7 @@ const Home = () => {
                   activeTab === tab
                     ? "bg-teal-500 text-white"
                     : "bg-gray-800 text-gray-300 hover:bg-gray-700"
-                } sm:w-full`}
+                }`}
                 onClick={() => setActiveTab(tab)}
               >
                 {tab}
