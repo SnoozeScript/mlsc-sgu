@@ -190,7 +190,7 @@ const Home = () => {
         "In-depth workshop on cloud computing with hands-on experience on Azure. Learn from industry professionals about the latest cloud technologies and best practices.",
       additionalDetails:
         "Participants will receive hands-on lab access, course materials, and a certificate of completion. Lunch and refreshments will be provided.",
-      link: "https://example.com/event1",
+      link: "https://forms.office.com/r/1YpJ8v1415",
     },
     {
       title: "AI & ML Hackathon",
@@ -202,7 +202,7 @@ const Home = () => {
         "Compete in a 24-hour hackathon focused on AI and ML innovation. Bring your ideas and transform them into cutting-edge solutions.",
       additionalDetails:
         "Prizes for top 3 teams. Mentorship from industry experts throughout the event. Networking opportunities with tech leaders.",
-      link: "https://example.com/event2",
+      link: "https://forms.office.com/r/1YpJ8v14152",
     },
   ];
 

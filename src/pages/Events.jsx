@@ -132,7 +132,7 @@ const Events = () => {
         "In-depth workshop on cloud computing with hands-on experience on Azure. Learn from industry professionals about the latest cloud technologies and best practices.",
       additionalDetails:
         "Participants will receive hands-on lab access, course materials, and a certificate of completion. Lunch and refreshments will be provided.",
-      link: "https://example.com/event1",
+      link: "https://forms.office.com/r/1YpJ8v1415",
       status: 'upcoming'
     },
     {
@@ -145,7 +145,7 @@ const Events = () => {
         "Compete in a 24-hour hackathon focused on AI and ML innovation. Bring your ideas and transform them into cutting-edge solutions.",
       additionalDetails:
         "Prizes for top 3 teams. Mentorship from industry experts throughout the event. Networking opportunities with tech leaders.",
-      link: "https://example.com/event2",
+      link: "https://forms.office.com/r/1YpJ8v1415",
       status: 'upcoming'
     },
     {
@@ -158,7 +158,7 @@ const Events = () => {
         "Learn about the latest in cybersecurity in a full-day bootcamp. Comprehensive training on threat detection, prevention, and mitigation.",
       additionalDetails:
         "Includes practical sessions, real-world case studies, and certification exam preparation. Limited seats available.",
-      link: "https://example.com/event3",
+      link: "https://forms.office.com/r/1YpJ8v1415",
       status: 'upcoming'
     },
     {
@@ -171,7 +171,7 @@ const Events = () => {
         "Enhance your design skills with expert-led UI/UX sessions. Learn the latest design trends, tools, and user-centric design principles.",
       additionalDetails:
         "Hands-on design challenges, portfolio review, and networking with design professionals. Software and design tools will be provided.",
-      link: "https://example.com/event4",
+      link: "https://forms.office.com/r/1YpJ8v1415",
       status: 'upcoming'
     },
     {
