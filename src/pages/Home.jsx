@@ -8,6 +8,9 @@ import About from "../pages/About";
 import TeamPage from "./TeamPage";
 import Contact from "../pages/Contact";
 
+//import ParticleBackground from "../components/ParticleBackground";
+import MicrosoftLogos from "../components/MicrosoftLogos";
+
 const EventDetailModal = ({ event, onClose }) => (
   <motion.div
     initial={{ opacity: 0 }}
@@ -104,7 +107,6 @@ EventDetailModal.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 const Home = () => {
-  
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   // Preview events for the Home page
@@ -187,6 +189,8 @@ const Home = () => {
 
   return (
     <div className="bg-gray-900 text-white">
+      
+      <MicrosoftLogos />
       <HeroSection />
       <About />
 
