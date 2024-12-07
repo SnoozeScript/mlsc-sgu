@@ -1,10 +1,18 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Home, Calendar, Info, MessageCircle } from "lucide-react";
+import {
+  Menu,
+  X,
+  Home,
+  Calendar,
+  Info,
+  MessageCircle,
+  User,
+} from "lucide-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeItem, setActiveItem] = useState(""); 
+  const [activeItem, setActiveItem] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
 
   const navItems = [
@@ -22,6 +30,11 @@ const Navbar = () => {
       path: "/events",
       label: "Events",
       icon: <Calendar className="mr-2" size={20} />,
+    },
+    {
+      path: "/teampage",
+      label: "Team",
+      icon: <User className="mr-2" size={20} />,
     },
     {
       path: "/contact",

@@ -1,22 +1,12 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import {
-  ArrowRight,
-  Github,
-  Linkedin,
-  Calendar,
-  Info,
-  Clock,
-  MapPin,
-  User,
-} from "lucide-react";
+import { ArrowRight, Calendar, Info, Clock, MapPin, User } from "lucide-react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import HeroSection from "../components/HeroSection";
 import About from "../pages/About";
+import TeamPage from "./TeamPage";
 import Contact from "../pages/Contact";
-import MdemoImg from "../assets/Mdemoimg.png";
-import FdemoImg from "../assets/Fdemoimg.png";
 
 const EventDetailModal = ({ event, onClose }) => (
   <motion.div
@@ -114,93 +104,8 @@ EventDetailModal.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 const Home = () => {
-  const [activeTab, setActiveTab] = useState("Leadership");
+  
   const [selectedEvent, setSelectedEvent] = useState(null);
-
-
-  // Team details
-  const teamMembers = {
-    Leadership: [
-      {
-        name: "Aditya Singh",
-        role: "President",
-        image: MdemoImg,
-        socials: { linkedin: "#", github: "#" },
-      },
-      {
-        name: "Pruthviraj Patil",
-        role: "Vice President",
-        image: MdemoImg,
-        socials: { linkedin: "#", github: "#" },
-      },
-    ],
-    Technical: [
-      {
-        name: "Aadil Inamdar",
-        role: "Technical Team",
-        image: MdemoImg,
-        socials: { linkedin: "https://www.linkedin.com/in/aadilinamdar27", github: "https://github.com/SnoozeScript" },
-      },
-      {
-        name: "Prathamesh Halale",
-        role: "Technical Team ",
-        image: MdemoImg,
-        socials: { linkedin: "#", github: "#" },
-      },
-      {
-        name: "Nehakousar Kaji",
-        role: "Technical Team ",
-        image: FdemoImg,
-        socials: { linkedin: "#", github: "#" },
-      },
-      {
-        name: "Shalu Singh",
-        role: "Technical Team",
-        image: FdemoImg,
-        socials: { linkedin: "#", github: "#" },
-      },
-    ],
-    Events: [
-      {
-        name: "Priyanka Rodrigues",
-        role: "Event Coordinator",
-        image: FdemoImg,
-        socials: { linkedin: "#", github: "#" },
-      },
-      {
-        name: "Dhanashree Latkar",
-        role: "Event Coordinator",
-        image: FdemoImg,
-        socials: { linkedin: "#", github: "#" },
-      },
-    ],
-    Other: [
-      {
-        name: "Rajnandan Jadhav",
-        role: "Social Media ",
-        image: MdemoImg,
-        socials: { linkedin: "#", github: "#" },
-      },
-      {
-        name: "Tushar Jadhav",
-        role: "Public Relations Officer",
-        image: MdemoImg,
-        socials: { linkedin: "#", github: "#" },
-      },
-      {
-        name: "Netra Mishrakoti",
-        role: "Volunteer ",
-        image: FdemoImg,
-        socials: { linkedin: "#", github: "#" },
-      },
-      {
-        name: "Aniruddh Kumbhar",
-        role: "Volunteer ",
-        image: MdemoImg,
-        socials: { linkedin: "#", github: "#" },
-      },
-    ],
-  };
 
   // Preview events for the Home page
   const previewEvents = [
@@ -352,81 +257,7 @@ const Home = () => {
           />
         )}
       </AnimatePresence>
-
-      {/* Team Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="p-10 bg-gray-900"
-      >
-        <div className="container mx-auto px-4">
-          <motion.h2
-            initial={{ scale: 0.9, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            className="text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-indigo-500"
-          >
-            Team Members
-          </motion.h2>
-
-          {/* Tabs for Team Categories */}
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            {["Leadership", "Technical", "Events", "Other"].map((tab) => (
-              <button
-                key={tab}
-                className={`text-lg font-semibold py-2 px-6 rounded-lg transition-all duration-300 ${
-                  activeTab === tab
-                    ? "bg-teal-500 text-white"
-                    : "bg-gray-800 text-gray-300 hover:bg-gray-700"
-                }`}
-                onClick={() => setActiveTab(tab)}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers[activeTab].map((member, index) => (
-              <motion.div key={index}>
-                <div className="bg-gray-800 p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-32 h-32 rounded-full mx-auto mb-4"
-                  />
-                  <h3 className="text-xl font-semibold text-teal-400 text-center">
-                    {member.name}
-                  </h3>
-                  <p className="text-gray-400 text-center">{member.role}</p>
-                  <div className="mt-4 flex justify-center space-x-6">
-                    <a
-                      href={member.socials.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-teal-400 hover:text-teal-500 transition-all duration-300"
-                    >
-                      <motion.div whileHover={{ scale: 1.2 }}>
-                        <Linkedin size={24} />
-                      </motion.div>
-                    </a>
-                    <a
-                      href={member.socials.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-teal-400 hover:text-teal-500 transition-all duration-300"
-                    >
-                      <motion.div whileHover={{ scale: 1.2 }}>
-                        <Github size={24} />
-                      </motion.div>
-                    </a>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.div>
+      <TeamPage />
       <Contact />
     </div>
   );

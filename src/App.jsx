@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Events from "./pages/Events";
 import About from "./pages/About";
-import JoinUs from "./pages/JoinUs";
+import TeamPage from "./pages/TeamPage.jsx";
 import Contact from "./pages/Contact";
 import ParticleBackground from "./components/ParticleBackground";
 import MicrosoftLogos from "./components/MicrosoftLogos";
@@ -16,22 +16,23 @@ const App = () => {
         {/* Global Background and Logos */}
         <ParticleBackground />
         <MicrosoftLogos />
-        
+
         {/* Navbar - Ensures it's above the particle effects and logos */}
         <Navbar />
-        
+
         {/* Main Content */}
         <main className="relative z-10">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/events" element={<Events />} />
             <Route path="/about" element={<About />} />
-            <Route path="/join-us" element={<JoinUs />} />
+            <Route path="/teampage" element={<TeamPage />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/dataSciencesummitrecap" element={<DataScienceSummitRecap />} />
+            <Route path="/dataSciencesummitrecap" element={<DataScienceSummitRecap />}
+            />
           </Routes>
         </main>
-        
+
         {/* Footer */}
         <Footer />
       </div>
