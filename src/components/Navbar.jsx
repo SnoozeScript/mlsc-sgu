@@ -69,9 +69,14 @@ const Navbar = () => {
           : "bg-gradient-to-r from-indigo-900 via-indigo-800 to-indigo-700/60 backdrop-blur-md"
       } backdrop-blur transition-all duration-300 sticky top-0 z-50 shadow-md`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+        {/* Logo and Microsoft Learn Student Ambassador Badge */}
+        <div className="flex items-center">
+          <img
+            src="/logo.png"
+            alt="Logo"
+            className="h-10 ml-4"
+          />
           <Link
             to="/"
             className="flex items-center text-white font-bold text-2xl 
@@ -80,37 +85,37 @@ const Navbar = () => {
           >
             MLSC SGU
           </Link>
+        </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-6">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`text-white px-4 py-2 rounded-lg text-lg font-medium flex items-center transition duration-300 ease-in-out 
-                  ${
-                    activeItem === item.path
-                      ? "bg-cyan-500/30 text-cyan-300"
-                      : "hover:bg-indigo-700/50 hover:text-cyan-300"
-                  }`}
-                onClick={() => setActiveItem(item.path)}
-              >
-                {item.icon}
-                {item.label}
-              </Link>
-            ))}
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="-mr-2 flex md:hidden">
-            <button
-              onClick={toggleMenu}
-              type="button"
-              className="bg-indigo-700/70 inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-800 focus:ring-white"
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex space-x-6">
+          {navItems.map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={`text-white px-4 py-2 rounded-lg text-lg font-medium flex items-center transition duration-300 ease-in-out 
+                ${
+                  activeItem === item.path
+                    ? "bg-cyan-500/30 text-cyan-300"
+                    : "hover:bg-indigo-700/50 hover:text-cyan-300"
+                }`}
+              onClick={() => setActiveItem(item.path)}
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
+              {item.icon}
+              {item.label}
+            </Link>
+          ))}
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="-mr-2 flex md:hidden">
+          <button
+            onClick={toggleMenu}
+            type="button"
+            className="bg-indigo-700/70 inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-800 focus:ring-white"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
 
