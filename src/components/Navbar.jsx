@@ -73,9 +73,9 @@ const Navbar = () => {
         {/* Logo and Microsoft Learn Student Ambassador Badge */}
         <div className="flex items-center">
           <img
-            src="/logo.png"
+            src="/L.png"
             alt="Logo"
-            className="h-10 ml-4"
+            className="h-12 ml-4"
           />
           <Link
             to="/"

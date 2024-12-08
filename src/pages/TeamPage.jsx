@@ -11,13 +11,19 @@ const teamMembers = {
       name: "Aditya Singh",
       role: "President",
       image: MdemoImg,
-      socials: { linkedin: "https://www.linkedin.com/in/aditya-singh-05204b266", github: "https://github.com/Aditya2344s" },
+      socials: {
+        linkedin: "https://www.linkedin.com/in/aditya-singh-05204b266",
+        github: "https://github.com/Aditya2344s",
+      },
     },
     {
       name: "Pruthviraj Patil",
       role: "Vice President",
       image: MdemoImg,
-      socials: { linkedin: "https://www.linkedin.com/in/pruthviraj-patil-390070252", github: "https://github.com/Pruthviraj404" },
+      socials: {
+        linkedin: "https://www.linkedin.com/in/pruthviraj-patil-390070252",
+        github: "https://github.com/Pruthviraj404",
+      },
     },
   ],
   Technical: [
@@ -34,19 +40,28 @@ const teamMembers = {
       name: "Prathamesh Halale",
       role: "Technical Team",
       image: MdemoImg,
-      socials: { linkedin: "https://www.linkedin.com/in/prathamesh-halale-a275581b8/", github: "#" },
+      socials: {
+        linkedin: "https://www.linkedin.com/in/prathamesh-halale-a275581b8/",
+        github: "https://github.com/472022",
+      },
     },
     {
       name: "Nehakousar Kaji",
       role: "Technical Team",
       image: FdemoImg,
-      socials: { linkedin: "https://www.linkedin.com/in/neha-kaji-786450257/", github: "#" },
+      socials: {
+        linkedin: "https://www.linkedin.com/in/neha-kaji-786450257/",
+        github: "https://github.com/hayat1316",
+      },
     },
     {
       name: "Shalu Singh",
       role: "Technical Team",
       image: FdemoImg,
-      socials: { linkedin: "#", github: "#" },
+      socials: {
+        linkedin: "https://www.linkedin.com/in/shalu-singh-01aa29310",
+        github: "#",
+      },
     },
   ],
   Events: [
@@ -54,13 +69,19 @@ const teamMembers = {
       name: "Priyanka Rodrigues",
       role: "Event Coordinator",
       image: FdemoImg,
-      socials: { linkedin: "https://www.linkedin.com/in/priyanka-r-6145b52b8/", github: "#" },
+      socials: {
+        linkedin: "https://www.linkedin.com/in/priyanka-r-6145b52b8/",
+        github: "#",
+      },
     },
     {
       name: "Dhanashree Latkar",
       role: "Event Coordinator",
       image: FdemoImg,
-      socials: { linkedin: "https://www.linkedin.com/in/dhanashree-latkar-652157272/", github: "https://github.com/ldhanuv" },
+      socials: {
+        linkedin: "https://www.linkedin.com/in/dhanashree-latkar-652157272/",
+        github: "https://github.com/ldhanuv",
+      },
     },
   ],
   Other: [
@@ -68,25 +89,37 @@ const teamMembers = {
       name: "Rajnandan Jadhav",
       role: "Social Media",
       image: MdemoImg,
-      socials: { linkedin: "https://www.linkedin.com/in/raj-jadhav-38a496284/", github: "#" },
+      socials: {
+        linkedin: "https://www.linkedin.com/in/rajnandan-jadhav-82072625b",
+        github: "https://github.com/rajjadhav7348",
+      },
     },
     {
       name: "Tushar Jadhav",
       role: "Public Relations Officer",
       image: MdemoImg,
-      socials: { linkedin: "https://www.linkedin.com/in/tushar-jadhav-800b1221b/", github: "#" },
+      socials: {
+        linkedin: "https://www.linkedin.com/in/tushar-jadhav-800b1221b/",
+        github: "https://github.com/Tushar0-02",
+      },
     },
     {
       name: "Netra Mishrakoti",
       role: "Volunteer",
       image: FdemoImg,
-      socials: { linkedin: "https://www.linkedin.com/in/netra-mishrakoti-09841525b", github: "#" },
+      socials: {
+        linkedin: "https://www.linkedin.com/in/netra-mishrakoti-09841525b",
+        github: "https://github.com/Netra1328",
+      },
     },
     {
       name: "Aniruddh Kumbhar",
       role: "Volunteer",
       image: MdemoImg,
-      socials: { linkedin: "#", github: "#" },
+      socials: {
+        linkedin: "https://www.linkedin.com/in/aniruddh-kumbhar-7691b92a5",
+        github: "https://github.com/aniruddh47",
+      },
     },
   ],
 };

@@ -24,7 +24,7 @@ const Footer = () => {
               <span className="hidden md:inline-block">Github</span>
             </a>
             <a
-              href="https://twitter.com" // Replace with actual links
+              href="https://x.com/sgumlsc" // Replace with actual links
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center space-x-2 text-white hover:text-cyan-400 transition duration-300"
