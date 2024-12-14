@@ -89,17 +89,24 @@ const HeroSection = () => {
           >
             <Rocket className="text-cyan-400 animate-pulse" size={50} />
             <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-500">
-              Microsoft Student
-              <span className="block text-white">Learn Club @ SGU</span>
+              Microsoft Learn
+              <span className="block text-white">
+                Student&apos;s Club @ SGU
+              </span>
             </h1>
           </motion.div>
           <motion.p
             variants={itemVariants}
             className="text-gray-300 text-lg leading-relaxed"
           >
-            Unleash your potential at the intersection of innovation and
-            technology. Join a transformative journey that bridges academic
-            excellence with real-world Microsoft-powered experiences.
+            A community of tech enthusiasts and innovators passionate about
+            learning, building, and leading in the world of technology.
+          </motion.p>
+          <motion.p
+            variants={itemVariants}
+            className="text-gray-300 text-lg leading-relaxed font-bold"
+          >
+            Explore. Collaborate. Thrive.
           </motion.p>
           <div className="flex space-x-4">
             <motion.div

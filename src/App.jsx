@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import ParticleBackground from "./components/ParticleBackground";
 import MicrosoftLogos from "./components/MicrosoftLogos";
 import DataScienceSummitRecap from "./components/Recap/DataScienceSummitRecap";
+import FAQ from "./pages/FAQ.jsx";
 const App = () => {
   return (
     <Router>
@@ -30,6 +31,7 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/dataSciencesummitrecap" element={<DataScienceSummitRecap />}
             />
+            <Route path="/faq" element={FAQ}/>
           </Routes>
         </main>
 

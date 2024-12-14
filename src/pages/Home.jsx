@@ -7,6 +7,7 @@ import HeroSection from "../components/HeroSection";
 import About from "../pages/About";
 import TeamPage from "./TeamPage";
 import Contact from "../pages/Contact";
+import FAQ from "./FAQ";
 
 //import ParticleBackground from "../components/ParticleBackground";
 import MicrosoftLogos from "../components/MicrosoftLogos";
@@ -263,6 +264,7 @@ const Home = () => {
       </AnimatePresence>
       <TeamPage />
       <Contact />
+      <FAQ />
     </div>
   );
 };

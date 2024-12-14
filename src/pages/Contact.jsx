@@ -54,7 +54,7 @@ const Contact = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-4">
                 <MapPin className="text-cyan-400" size={28} />
-                <span>Microsoft Student Learn Club, SGU Campus</span>
+                <span>Microsoft Learn Student&apos;s  Club, SGU Campus</span>
               </div>
               <div className="flex items-center space-x-4">
                 <Phone className="text-cyan-400" size={28} />

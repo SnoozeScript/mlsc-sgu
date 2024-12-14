@@ -1,43 +1,31 @@
 import { motion } from "framer-motion";
-import { Code, Cloud, Brain, Trophy, Users, Rocket } from "lucide-react";
+import { Network, Lightbulb, Globe, Zap } from "lucide-react";
 
 const About = () => {
-  const clubFeatures = [
+  const whyJoinReasons = [
     {
-      icon: <Code className="text-cyan-400" size={40} />,
-      title: "Technology Exploration",
+      icon: <Zap className="text-yellow-400" size={40} />,
+      title: "Hands-on Learning",
       description:
-        "Dive deep into cutting-edge Microsoft technologies and emerging tech trends.",
+        "Engage in immersive sessions spanning AI, Cloud Computing, App Development, and cutting-edge technologies that transform theoretical knowledge into practical skills.",
     },
     {
-      icon: <Cloud className="text-blue-400" size={40} />,
-      title: "Cloud Computing",
+      icon: <Network className="text-green-400" size={40} />,
+      title: "Collaborative Environment",
       description:
-        "Learn and implement cloud solutions using Microsoft Azure and related platforms.",
+        "Join forces with passionate colleagues to solve real-world problems, creating impactful solutions that make a meaningful difference in society.",
     },
     {
-      icon: <Brain className="text-purple-400" size={40} />,
-      title: "AI & Machine Learning",
+      icon: <Globe className="text-blue-400" size={40} />,
+      title: "Networking Opportunities",
       description:
-        "Explore artificial intelligence and machine learning through hands-on projects.",
-    },
-  ];
-
-  const milestones = [
-    {
-      icon: <Trophy className="text-yellow-400" size={40} />,
-      value: "50+",
-      label: "Tech Workshops",
+        "Connect with tech professionals, industry mentors, and experts. Build confidence and expand your professional network through active club participation.",
     },
     {
-      icon: <Users className="text-teal-400" size={40} />,
-      value: "200+",
-      label: "Active Members",
-    },
-    {
-      icon: <Rocket className="text-cyan-400" size={40} />,
-      value: "20+",
-      label: "Successful Projects",
+      icon: <Lightbulb className="text-cyan-400" size={40} />,
+      title: "Innovation Playground",
+      description:
+        "A dynamic space where diverse perspectives converge, ideas are shared, and technological innovations are born from collaborative creativity.",
     },
   ];
 
@@ -54,32 +42,99 @@ const About = () => {
             className="text-5xl font-bold text-center mb-12 
             bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500"
           >
-            About Microsoft Student Learn Club
+            Microsoft Learn Student&apos;s Club
           </h2>
         </motion.div>
 
-        {/* Club Description */}
+        {/* Club Overview */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto text-center mb-16"
+          className="max-w-4xl mx-auto text-center mb-16"
         >
           <p className="text-xl text-gray-300 leading-relaxed mb-6">
-            The Microsoft Student Learn Club at Sanjay Ghodawat University is a
-            dynamic community dedicated to empowering students with cutting-edge
-            technological skills, innovative learning approaches, and
-            transformative Microsoft technologies.
+            The Microsoft Learn Student&apos;s Club is a student-driven initiative that
+            empowers young minds through technology. We are more than just a
+            club—we are a community of passionate, enthusiastic students who
+            believe in learning, experimenting, and collaborating to build
+            impactful technological solutions.
           </p>
-          <p className="text-lg text-gray-400">
-            Our mission is to bridge the gap between academic learning and
-            industry requirements, providing students with practical skills,
-            networking opportunities, and a platform to explore and excel in
-            technology.
+          <p className="text-lg text-gray-400 mb-6">
+            Our members come from diverse walks of life and different fields of
+            work, bringing unique perspectives that fuel innovation and create
+            an environment where learning never stops.
           </p>
         </motion.div>
 
-        {/* Club Features */}
+        
+
+        {/* Our Mission */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-5xl mx-auto bg-gray-800/30 backdrop-blur-lg rounded-3xl 
+          border border-white/10 p-12 text-center mb-24 relative overflow-hidden"
+        >
+          <div
+            className="absolute -top-12 -right-12 
+            bg-blue-500/10 w-48 h-48 rounded-full blur-2xl"
+          ></div>
+          <div
+            className="absolute -bottom-12 -left-12 
+            bg-cyan-500/10 w-48 h-48 rounded-full blur-2xl"
+          ></div>
+
+          <div className="relative z-10">
+            <h3
+              className="text-4xl font-bold mb-8 
+              bg-clip-text text-transparent 
+              bg-gradient-to-r from-cyan-400 to-blue-500"
+            >
+              Our Mission
+            </h3>
+            <ul className="text-lg text-gray-300 space-y-6 max-w-4xl mx-auto text-left">
+              <li className="flex items-start space-x-4">
+                <div className="w-6 h-6 bg-cyan-500/30 rounded-full flex items-center justify-center mt-1">
+                  <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
+                </div>
+                <span>
+                  Deliver hands-on workshops and practical projects that bridge
+                  the gap between academic learning and industry requirements
+                </span>
+              </li>
+              <li className="flex items-start space-x-4">
+                <div className="w-6 h-6 bg-cyan-500/30 rounded-full flex items-center justify-center mt-1">
+                  <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
+                </div>
+                <span>
+                  Create a collaborative platform that encourages building and
+                  sharing ideas across diverse student backgrounds
+                </span>
+              </li>
+              <li className="flex items-start space-x-4">
+                <div className="w-6 h-6 bg-cyan-500/30 rounded-full flex items-center justify-center mt-1">
+                  <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
+                </div>
+                <span>
+                  Provide networking opportunities with technology industry
+                  leaders and professionals
+                </span>
+              </li>
+              <li className="flex items-start space-x-4">
+                <div className="w-6 h-6 bg-cyan-500/30 rounded-full flex items-center justify-center mt-1">
+                  <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
+                </div>
+                <span>
+                  Inspire innovation through creativity, critical thinking, and
+                  solving real-world technological challenges
+                </span>
+              </li>
+            </ul>
+          </div>
+        </motion.div>
+        {/* Why Join MLSC */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -94,9 +149,9 @@ const About = () => {
               },
             },
           }}
-          className="grid md:grid-cols-3 gap-8 mb-16"
+          className="grid md:grid-cols-2 gap-8 mb-16"
         >
-          {clubFeatures.map((feature, index) => (
+          {whyJoinReasons.map((reason, index) => (
             <motion.div
               key={index}
               variants={{
@@ -110,40 +165,33 @@ const About = () => {
               className="bg-gray-800/50 backdrop-blur-lg p-6 rounded-2xl 
               border border-white/10 text-center transition duration-300"
             >
-              <div className="flex justify-center mb-4">{feature.icon}</div>
+              <div className="flex justify-center mb-4">{reason.icon}</div>
               <h3 className="text-xl font-bold mb-3 text-white">
-                {feature.title}
+                {reason.title}
               </h3>
-              <p className="text-gray-400">{feature.description}</p>
+              <p className="text-gray-400">{reason.description}</p>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Milestones */}
+        {/* Call to Action */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-gray-800/50 backdrop-blur-lg rounded-2xl 
-          border border-white/10 p-12 text-center"
+          className="text-center mt-16"
         >
           <h3
-            className="text-3xl font-bold mb-8 
+            className="text-3xl font-bold mb-6 
             bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500"
           >
-            Our Club Milestones
+            Join Us and Make a Difference
           </h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {milestones.map((milestone, index) => (
-              <div key={index} className="flex flex-col items-center">
-                <div className="mb-4">{milestone.icon}</div>
-                <div className="text-4xl font-bold text-white mb-2">
-                  {milestone.value}
-                </div>
-                <div className="text-gray-400">{milestone.label}</div>
-              </div>
-            ))}
-          </div>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+            Let&apos;s join a community that changes things and creates
+            opportunities. Together, we&apos;ll learn, innovate, and lead the
+            way in technological advancement.
+          </p>
         </motion.div>
       </div>
     </div>
