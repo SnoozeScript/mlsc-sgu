@@ -149,82 +149,29 @@ EventCard.propTypes = {
 // EVENTS
 const EVENTS = [
   {
-    title: "Workshop on Cloud Computing",
-    date: "December 15, 2024",
-    time: "10:00 AM - 4:00 PM",
-    location: "Tech Innovation Center, Mumbai",
-    organizer: "Cloud Experts Community",
-    description:
-      "In-depth workshop on cloud computing with hands-on experience on Azure. Learn from industry professionals about the latest cloud technologies and best practices.",
-    additionalDetails:
-      "Participants will receive hands-on lab access, course materials, and a certificate of completion. Lunch and refreshments will be provided.",
-    link: "https://forms.office.com/r/1YpJ8v1415",
-    status: "upcoming",
+    "title": "MLSC Unveil '25: Pathways to Success",
+    "date": "January 17, 2025",
+    "time": "10:00 AM - 4:00 PM",
+    "location": "Seminar Hall",
+    "organizer": "MLSC",
+    "description":
+      "Kickstart your journey to success with MLSC Unveil '25! Join us for an inspiring inauguration followed by insightful sessions on placements and internships. Discover the strategies to excel in your career and gain valuable guidance from industry experts.",
+    "additionalDetails":
+      "Don't miss the chance to grab exciting goodies and giveaways! Make your move towards a brighter future with MLSC.",
+    "link": "https://forms.office.com/r/1YpJ8v1415",
+    "status": "upcoming"
   },
+  
   {
-    title: "AI & ML Hackathon",
-    date: "January 10, 2025",
-    time: "9:00 AM - 10:00 PM",
-    location: "Online Event",
-    organizer: "AI Innovators League",
-    description:
-      "Compete in a 24-hour hackathon focused on AI and ML innovation. Bring your ideas and transform them into cutting-edge solutions.",
-    additionalDetails:
-      "Prizes for top 3 teams. Mentorship from industry experts throughout the event. Networking opportunities with tech leaders.",
+    title: "",
+    date: "",
+    time: "",
+    location: "",
+    organizer: "",
+    description: "",
+    additionalDetails: "",
     link: "#",
-    status: "upcoming",
-  },
-  {
-    title: "Cybersecurity Bootcamp",
-    date: "January 25, 2025",
-    time: "9:30 AM - 5:30 PM",
-    location: "Cyber Defense Academy, Bangalore",
-    organizer: "Network Security Alliance",
-    description:
-      "Learn about the latest in cybersecurity in a full-day bootcamp. Comprehensive training on threat detection, prevention, and mitigation.",
-    additionalDetails:
-      "Includes practical sessions, real-world case studies, and certification exam preparation. Limited seats available.",
-    link: "#",
-    status: "upcoming",
-  },
-  {
-    title: "UI/UX Design Workshop",
-    date: "February 5, 2025",
-    time: "11:00 AM - 3:00 PM",
-    location: "Design Innovation Hub, Pune",
-    organizer: "Design Thinking Institute",
-    description:
-      "Enhance your design skills with expert-led UI/UX sessions. Learn the latest design trends, tools, and user-centric design principles.",
-    additionalDetails:
-      "Hands-on design challenges, portfolio review, and networking with design professionals. Software and design tools will be provided.",
-    link: "#",
-    status: "upcoming",
-  },
-  {
-    title: "Data Science Summit 2024",
-    date: "June 15, 2024",
-    time: "9:00 AM - 6:00 PM",
-    location: "Tech Conference Center, Hyderabad",
-    organizer: "Data Insights Global",
-    description:
-      "Comprehensive summit exploring the latest trends in data science, machine learning, and AI technologies.",
-    additionalDetails:
-      "Keynote speeches, panel discussions, and networking opportunities with leading data scientists.",
-    link: "/dataSciencesummitrecap",
-    status: "completed",
-  },
-  {
-    title: "Blockchain Technology Conference",
-    date: "May 20, 2024",
-    time: "10:00 AM - 5:00 PM",
-    location: "Innovation Center, Delhi",
-    organizer: "Blockchain Technology Forum",
-    description:
-      "A comprehensive conference exploring blockchain innovations, cryptocurrency trends, and decentralized technologies.",
-    additionalDetails:
-      "Startup pitch sessions, expert panels, and insights into blockchain applications across various industries.",
-    link: "#",
-    status: "completed",
+    status: "unpublished",
   },
   // Additional events here...
 ];

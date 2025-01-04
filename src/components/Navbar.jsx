@@ -83,7 +83,7 @@ const Navbar = () => {
             bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500 
             hover:from-cyan-300 hover:to-blue-400 transition duration-300"
           >
-            MLSC SGU
+            SGU MLSC
           </Link>
         </div>
 

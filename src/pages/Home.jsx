@@ -113,28 +113,17 @@ const Home = () => {
   // Preview events for the Home page
   const previewEvents = [
     {
-      title: "Workshop on Cloud Computing",
-      date: "December 15, 2024",
-      time: "10:00 AM - 4:00 PM",
-      location: "Tech Innovation Center, Mumbai",
-      organizer: "Cloud Experts Community",
+      title: "MLSC Unveil '25: Pathways to success",
+      date: "January 17, 2025",
+      time: "00:00 AM - 00:00 PM",
+      location: "Seminar Hall",
+      organizer: "MLSC",
       description:
         "In-depth workshop on cloud computing with hands-on experience on Azure. Learn from industry professionals about the latest cloud technologies and best practices.",
       additionalDetails:
         "Participants will receive hands-on lab access, course materials, and a certificate of completion. Lunch and refreshments will be provided.",
       link: "https://forms.office.com/r/1YpJ8v1415",
-    },
-    {
-      title: "AI & ML Hackathon",
-      date: "January 10, 2025",
-      time: "9:00 AM - 10:00 PM",
-      location: "Online Event",
-      organizer: "AI Innovators League",
-      description:
-        "Compete in a 24-hour hackathon focused on AI and ML innovation. Bring your ideas and transform them into cutting-edge solutions.",
-      additionalDetails:
-        "Prizes for top 3 teams. Mentorship from industry experts throughout the event. Networking opportunities with tech leaders.",
-      link: "#",
+      status: "upcoming",
     },
   ];
 
@@ -190,7 +179,6 @@ const Home = () => {
 
   return (
     <div className="bg-gray-900 text-white">
-      
       <MicrosoftLogos />
       <HeroSection />
       <About />
