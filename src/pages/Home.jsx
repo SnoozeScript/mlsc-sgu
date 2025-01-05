@@ -122,7 +122,7 @@ const Home = () => {
         "In-depth workshop on cloud computing with hands-on experience on Azure. Learn from industry professionals about the latest cloud technologies and best practices.",
       additionalDetails:
         "Participants will receive hands-on lab access, course materials, and a certificate of completion. Lunch and refreshments will be provided.",
-      link: "https://forms.office.com/r/1YpJ8v1415",
+      link: "https://forms.office.com/r/tt8b1j7YpT",
       status: "upcoming",
     },
   ];

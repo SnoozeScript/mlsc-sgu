@@ -158,7 +158,7 @@ const EVENTS = [
       "Kickstart your journey to success with MLSC Unveil '25! Join us for an inspiring inauguration followed by insightful sessions on placements and internships. Discover the strategies to excel in your career and gain valuable guidance from industry experts.",
     "additionalDetails":
       "Don't miss the chance to grab exciting goodies and giveaways! Make your move towards a brighter future with MLSC.",
-    "link": "https://forms.office.com/r/1YpJ8v1415",
+    "link": "https://forms.office.com/r/tt8b1j7YpT",
     "status": "upcoming"
   },
   
