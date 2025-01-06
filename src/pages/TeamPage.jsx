@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { Linkedin, Github } from "lucide-react";
-
+import React from 'react';
+import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
+import { Linkedin, Github, Mail } from 'lucide-react';
 import MdemoImg from "../assets/Mdemoimg.png";
 import FdemoImg from "../assets/Fdemoimg.png";
 
@@ -84,7 +84,7 @@ const teamMembers = {
       },
     },
   ],
-  Other: [
+  "View All": [
     {
       name: "Rajnandan Jadhav",
       role: "Social Media",
@@ -124,15 +124,93 @@ const teamMembers = {
   ],
 };
 
-const TeamPage = () => {
-  const [activeTab, setActiveTab] = useState("Leadership");
+const TeamCard = ({ member, index, isHovered }) => (
+  <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 p-6 overflow-hidden">
+    <motion.div
+      initial={false}
+      animate={{ scale: isHovered ? 1.1 : 1 }}
+      transition={{ duration: 0.3 }}
+      className="relative z-10"
+    >
+      <div className="relative w-32 h-32 mx-auto mb-4">
+        <img
+          src={member.image}
+          alt={member.name}
+          className="w-full h-full rounded-full object-cover border-4 border-teal-400"
+        />
+        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-teal-400/20 to-blue-500/20" />
+      </div>
+    </motion.div>
 
-  // Fallback if the activeTab doesn't match any keys in teamMembers
-  const currentTeam = teamMembers[activeTab] || [];
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.1 }}
+      className="text-center"
+    >
+      <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-blue-500 mb-2">
+        {member.name}
+      </h3>
+      <p className="text-gray-400 text-lg mb-4">{member.role}</p>
+      <div className="flex justify-center space-x-6">
+        {member.socials.linkedin && (
+          <motion.a
+            href={member.socials.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-teal-400 hover:text-teal-300 transition-colors duration-300"
+            whileHover={{ scale: 1.2, rotate: 5 }}
+          >
+            <Linkedin size={24} />
+          </motion.a>
+        )}
+        {member.socials.github && member.socials.github !== "#" && (
+          <motion.a
+            href={member.socials.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-teal-400 hover:text-teal-300 transition-colors duration-300"
+            whileHover={{ scale: 1.2, rotate: -5 }}
+          >
+            <Github size={24} />
+          </motion.a>
+        )}
+        <motion.button
+          className="text-teal-400 hover:text-teal-300 transition-colors duration-300"
+          whileHover={{ scale: 1.2, rotate: 5 }}
+        >
+          <Mail size={24} />
+        </motion.button>
+      </div>
+    </motion.div>
+  </div>
+);
+
+TeamCard.propTypes = {
+  member: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    role: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    socials: PropTypes.shape({
+      linkedin: PropTypes.string,
+      github: PropTypes.string,
+    }).isRequired,
+  }).isRequired,
+  index: PropTypes.number.isRequired,
+  isHovered: PropTypes.bool.isRequired,
+};
+
+const TeamPage = () => {
+  const [activeTab, setActiveTab] = React.useState("Leadership");
+  const [hoveredCard, setHoveredCard] = React.useState(null);
+
+  const currentTeam =
+    activeTab === "View All"
+      ? Object.values(teamMembers).flat()
+      : teamMembers[activeTab] || [];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-300">
-      {/* Team Section */}
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-gray-300">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -140,81 +218,61 @@ const TeamPage = () => {
         className="p-10"
       >
         <div className="container mx-auto px-4">
-          {/* Header */}
-          <motion.h2
-            initial={{ scale: 0.9, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            className="text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-indigo-500"
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
           >
-            Team Members
-          </motion.h2>
+            <h2 className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600 mb-4">
+              Our Team
+            </h2>
+            <p className="text-xl text-gray-400">
+              Meet the talented individuals behind our success
+            </p>
+          </motion.div>
 
-          {/* Tabs */}
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
             {Object.keys(teamMembers).map((tab) => (
-              <button
+              <motion.button
                 key={tab}
-                className={`text-lg font-semibold py-2 px-6 rounded-lg transition-all duration-300 ${
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`text-lg font-semibold py-3 px-8 rounded-xl transition-all duration-300 ${
                   activeTab === tab
-                    ? "bg-teal-500 text-white"
+                    ? "bg-gradient-to-r from-teal-500 to-blue-600 text-white shadow-lg"
                     : "bg-gray-800 hover:bg-gray-700"
                 }`}
                 onClick={() => setActiveTab(tab)}
               >
                 {tab}
-              </button>
+              </motion.button>
             ))}
           </div>
 
-          {/* Team Members */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div
+            initial={false}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
             {currentTeam.map((member, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                onHoverStart={() => setHoveredCard(index)}
+                onHoverEnd={() => setHoveredCard(null)}
               >
-                <div className="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-32 h-32 rounded-full mx-auto mb-4"
-                  />
-                  <h3 className="text-xl font-semibold text-teal-400 text-center">
-                    {member.name}
-                  </h3>
-                  <p className="text-gray-400 text-center">{member.role}</p>
-                  <div className="mt-4 flex justify-center space-x-6">
-                    {member.socials.linkedin && (
-                      <a
-                        href={member.socials.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-teal-400 hover:text-teal-500 transition-all duration-300"
-                      >
-                        <motion.div whileHover={{ scale: 1.2 }}>
-                          <Linkedin size={24} />
-                        </motion.div>
-                      </a>
-                    )}
-                    {member.socials.github && (
-                      <a
-                        href={member.socials.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-teal-400 hover:text-teal-500 transition-all duration-300"
-                      >
-                        <motion.div whileHover={{ scale: 1.2 }}>
-                          <Github size={24} />
-                        </motion.div>
-                      </a>
-                    )}
-                  </div>
-                </div>
+                <TeamCard
+                  member={member}
+                  index={index}
+                  isHovered={hoveredCard === index}
+                />
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </motion.div>
     </div>
